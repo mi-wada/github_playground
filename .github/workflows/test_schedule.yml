@@ -26,6 +26,6 @@ jobs:
               repo: context.repo.repo,
               title: 'append readme',
               body: '- hoge',
-              head: `hoge:append-readme`,
+              head: `append-readme`,
               base: 'master'
             })
