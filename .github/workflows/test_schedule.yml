@@ -1,0 +1,31 @@
+name: test_schedule
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+jobs:
+  create_pr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Git Config
+        run: |
+          git config --local user.email "mtak.wd+github-action@gmail.com"
+          git config --local user.name "github-actions[bot]"
+      - name: Append README.md
+        run: echo "- hoge" >> ./README.md
+      - name: Push
+        run: |
+          git branch -m append-readme
+          git push -u origin append-readme
+      - name: Create PR
+        uses: actions/github-script@v4
+        with:
+          script: |
+            github.pulls.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: 'append readme',
+              body: '- hoge',
+              head: `${context.repo.owner}:append-readme`,
+              base: 'master'
+            })
