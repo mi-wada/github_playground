@@ -1,4 +1,4 @@
-name: comment-on-PR
+name: say_hello
 on:
   workflow_dispatch:
     inputs:
