@@ -14,6 +14,8 @@ jobs:
   say_hello:
     runs-on: ubuntu-latest
     steps:
-      - run: |
+      - id: say_hello
+        run: |
           echo "Hello ${{ github.event.inputs.name }}!"
           echo "- in ${{ github.event.inputs.home }}!"
+      - run: echo "say_hello output is ${{ steps.say_hello.outputs }}"
