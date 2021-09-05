@@ -18,4 +18,5 @@ jobs:
         run: |
           echo "Hello ${{ github.event.inputs.name }}!"
           echo "- in ${{ github.event.inputs.home }}!"
-      - run: echo "say_hello output is ${{ steps.say_hello.outputs }}"
+          echo "::set-output name=${{ github.event.inputs.name }}"
+      - run: echo "say_hello output is ${{ steps.say_hello.outputs.name }}"
