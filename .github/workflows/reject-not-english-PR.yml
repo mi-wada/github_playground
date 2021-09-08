@@ -16,4 +16,6 @@ jobs:
           result=`git diff origin/${{github.base_ref}} | grep Good`
           echo "::set-output name=result::$result"
       - name: 'Echo'
-        run: echo ${{ steps.detect-string.outputs.result }}
+        env:
+          RESULT: ${{ steps.detect-string.outputs.result }}
+        run: echo $RESULT
