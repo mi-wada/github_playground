@@ -6,14 +6,14 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: 'Checkout'
+        uses: actions/checkout@v2
+      - name: 'Fetch'
+        run: git fetch --depth 1 origin ${{github.base_ref}}
       - name: detect-string
         id: detect-string
         run: |
-          result=`git branch`
+          result=`git diff origin/${{github.base_ref}}`
           echo "::set-output name=result::$result"
-      - name: comment-on-PR
-        env:
-          RESULT: ${{steps.detext-string.outputs.result}}
-        run: |
-          echo $RESULT
+      - name: 'Echo'
+        run: echo ${{ steps.detect-string.outputs.result }}
