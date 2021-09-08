@@ -13,7 +13,7 @@ jobs:
       - name: detect-string
         id: detect-string
         run: |
-          result=`git diff origin/${{github.base_ref}}`
+          result=`git diff origin/${{github.base_ref}} | grep Good`
           echo "::set-output name=result::$result"
       - name: 'Echo'
         run: echo ${{ steps.detect-string.outputs.result }}
