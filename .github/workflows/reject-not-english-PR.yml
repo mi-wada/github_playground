@@ -6,6 +6,7 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: detect-string
         id: detect-string
         run: |
