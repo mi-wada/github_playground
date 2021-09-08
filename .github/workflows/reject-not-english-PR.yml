@@ -15,6 +15,5 @@ jobs:
       - name: comment-on-PR
         env:
           RESULT: ${{steps.detext-string.outputs.result}}
-        uses: actions/github-script@v4
-        with:
-          script: console.log($RESULT)
+        run: |
+          echo $RESULT
