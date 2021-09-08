@@ -17,4 +17,4 @@ jobs:
           RESULT: ${{steps.detext-string.outputs.result}}
         uses: actions/github-script@v4
         with:
-          script: console.log(RESULT)
+          script: console.log(env.RESULT)
