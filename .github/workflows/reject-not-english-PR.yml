@@ -13,7 +13,7 @@ jobs:
       - name: detect-string
         id: detect-string
         run: |
-          result=`git diff origin/${{github.base_ref}} | grep Good`
+          result=`git diff origin/${{github.base_ref}} | grep -P '[^\x00-\x7F]`
           echo "::set-output name=result::$result"
       - name: 'Comment on PR'
         uses: actions/github-script@v4
