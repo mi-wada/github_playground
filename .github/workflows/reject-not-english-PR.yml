@@ -10,8 +10,7 @@ jobs:
       - name: detect-string
         id: detect-string
         run: |
-          git fetch origin master
-          result=`git diff origin/${{github.base_ref}} --diff-filter=A | grep Good`
+          result=`git branch`
           echo "::set-output name=result::$result"
       - name: comment-on-PR
         uses: actions/github-script@v4
