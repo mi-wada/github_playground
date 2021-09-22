@@ -1,6 +1,8 @@
 name: say_hello
 on:
   workflow_dispatch:
+    branches:
+      - master
     inputs:
       name:
         description:  'Person to greet'
