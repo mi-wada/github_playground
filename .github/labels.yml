@@ -1,0 +1,90 @@
+- name: dependencies
+  description: Pull requests that update a dependency file
+  color: 6ab7ff
+- name: docker
+  description: Pull requests that update Docker code
+  color: 21ceff
+- name: DRY
+  description: Don't repeat yourself!! もう同じことは繰り返したくない、そこのあなたに。
+  color: 9d5f51
+- name: Epic
+  description:
+  color: 3e4b9e
+- name: for refinement
+  description: リファインメントできるタスク
+  color: fbca04
+- name: github_actions
+  description: Pull requests that update Github_actions code
+  color: '000000'
+- name: javascript
+  description: Pull requests that update Javascript code
+  color: 76d275
+- name: one good per day
+  description: Many a little makes a mickle.
+  color: d69f71
+- name: Problem：Availability
+  description: 可用性に問題があるもの
+  color: b60205
+- name: Problem：BUG
+  description: バグがあるもの
+  color: b60205
+- name: Problem：Security
+  description: セキュリティ関連で問題があるもの
+  color: b60205
+- name: Problem：パフォーマンス
+  description:
+  color: e99695
+- name: ruby
+  description: Pull requests that update Ruby code
+  color: ff7961
+- name: security
+  description: Pull requests that address a security vulnerability
+  color: ee0701
+- name: Spike
+  description:
+  color: b60205
+- name: support page
+  description: need to modify support page when releaes サポート　ページ
+  color: a7a7d3
+- name: UX改善
+  description: ユーザーに関係ある機能で改善の必要があるもの
+  color: '09f6ab'
+- name: ご意見番
+  description: Issueの期待する結果が不明瞭なので起票者にヒアリングして具体化が必要
+  color: 358fbf
+- name: スクラム外
+  description: outside scrum
+  color: 15433d
+- name: データパッチ
+  description: data patch
+  color: 1b2890
+- name: データ不整合
+  description: data patch data inconsistency
+  color: 719e0a
+- name: ドキュメント
+  description: write documentドキュメントを書く
+  color: '09f6ab'
+- name: ベースポイント
+  description: base point
+  color: 5ce479
+- name: リファクタ
+  description: refactoring
+  color: '09f6ab'
+- name: 優先度：低
+  description: サービスの骨にならないもの low priority
+  color: fff263
+- name: 優先度：高
+  description: サービスの骨になるもの high priority
+  color: fbc02d
+- name: 割れ窓
+  description: waremado
+  color: bfdadc
+- name: 問い合わせ
+  description: otoiawase  お問い合わせ
+  color: 1b4d41
+- name: 振り返りネタ
+  description: review furikaeri
+  color: fbca04
+- name: 改善：システム
+  description: system ユーザーにはあまり関係ないがシステム的に改善の必要があるもの
+  color: '09f6ab'
