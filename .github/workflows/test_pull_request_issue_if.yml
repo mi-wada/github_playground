@@ -9,11 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          if [ -n ${{ github.event.issue }} ]; then
+          if [ -n ${{ github.event.issue.number }} ]; then
             CLOSED_ISSUE_NUMBER=${{ github.event.issue.number }}
           fi
 
-          if [ -n ${{ github.event.pull_request }} ]; then
+          if [ -n ${{ github.event.pull_request.number }} ]; then
             if [ ${{ github.event.pull_request.merged }} -eq 'false' ]; then
               exit 0
             fi
