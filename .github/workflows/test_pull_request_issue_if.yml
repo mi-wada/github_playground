@@ -11,10 +11,12 @@ jobs:
       - run: |
           echo 'start'
           if [ -n "${{ github.event.issue.number }}" ]; then
+            echo 'in first if'
             CLOSED_ISSUE_NUMBER=${{ github.event.issue.number }}
           fi
 
           if [ -n ${{ github.event.pull_request.number }} ]; then
+            echo 'in second if'
             if [[ "${{ github.event.pull_request.merged }}" == 'false' ]]; then
               echo 'in this block'
               exit 0
