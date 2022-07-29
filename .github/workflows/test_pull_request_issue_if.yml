@@ -15,6 +15,7 @@ jobs:
 
           if [ -n ${{ github.event.pull_request.number }} ]; then
             if [[ "${{ github.event.pull_request.merged }}" == 'false' ]]; then
+              echo 'in this block'
               exit 0
             fi
 
