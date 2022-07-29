@@ -14,7 +14,7 @@ jobs:
           fi
 
           if [ -n ${{ github.event.pull_request.number }} ]; then
-            if [ ${{ github.event.pull_request.merged }} -eq 'false' ]; then
+            if [ "${{ github.event.pull_request.merged }}" -eq 'false' ]; then
               exit 0
             fi
 
