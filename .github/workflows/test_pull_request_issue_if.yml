@@ -1,0 +1,24 @@
+name: .github/workflows/test_pull_request_issue_if.yml
+on:
+  pull_request:
+    types: [closed]
+  issues:
+    types: [closed]
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          if [ -n ${{ github.event.issue }} ]; then
+            CLOSED_ISSUE_NUMBER=${{ github.event.issue.number }}
+          fi
+
+          if [ -n ${{ github.event.pull_request }} ]; then
+            if [ ${{ github.event.pull_request.merged }} -eq 'false' ]; then
+              exit 0
+            fi
+
+            CLOSED_ISSUE_NUMBER=${{ github.event.pull_request.number }}
+          fi
+
+          echo $CLOSED_ISSUE_NUMBER
