@@ -15,7 +15,7 @@ jobs:
             CLOSED_ISSUE_NUMBER=${{ github.event.issue.number }}
           fi
 
-          if [ -n ${{ github.event.pull_request.number }} ]; then
+          if [ -n "${{ github.event.pull_request.number }}" ]; then
             echo 'in second if'
             if [[ "${{ github.event.pull_request.merged }}" == 'false' ]]; then
               echo 'in this block'
