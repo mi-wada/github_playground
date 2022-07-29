@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
+          echo 'start'
           if [ -n "${{ github.event.issue.number }}" ]; then
             CLOSED_ISSUE_NUMBER=${{ github.event.issue.number }}
           fi
