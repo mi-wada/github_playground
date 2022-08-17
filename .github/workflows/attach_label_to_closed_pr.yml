@@ -20,6 +20,11 @@ jobs:
               repo: context.repo.repo,
               labels: ['スクラム外']
             })
-      - name: hoge
+      - if: 1 == 1
         run: |
-          echo ${{ context.issue.number }}
+          echo 1
+      - if: 1 == 2
+        run: |
+          echo 2
+      - run: |
+          echo 3
