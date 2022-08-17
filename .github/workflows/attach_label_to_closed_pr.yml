@@ -22,7 +22,7 @@ jobs:
             })
       - if: 1 == 1
         run: |
-          echo ${{ github.event.action }}
+          echo ${{ github.event_name }}
       - if: 1 == 2
         run: |
           echo 2
