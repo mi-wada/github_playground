@@ -22,4 +22,4 @@ jobs:
             })
       - name: hoge
         run: |
-          echo ${{ github.context.issue.number }}
+          echo ${{ context.issue.number }}
