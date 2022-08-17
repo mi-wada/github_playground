@@ -4,7 +4,8 @@ on:
     types: [closed]
   issues:
     types: [closed]
-permissions: {}
+permissions:
+  issues: write
 jobs:
   main:
     runs-on: ubuntu-latest
