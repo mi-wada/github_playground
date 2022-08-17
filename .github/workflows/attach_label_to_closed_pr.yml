@@ -20,3 +20,6 @@ jobs:
               repo: context.repo.repo,
               labels: ['スクラム外']
             })
+      - name: hoge
+        run: |
+          echo ${{ github.context.issue.number }}
