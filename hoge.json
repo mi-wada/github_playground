@@ -1,0 +1,20 @@
+{
+  "data": {
+    "issueByInfo": {
+      "connections": {
+        "nodes": [
+          {
+            "sprints": {
+              "totalCount": 2
+            }
+          },
+          {
+            "sprints": {
+              "totalCount": 2
+            }
+          }
+        ]
+      }
+    }
+  }
+}
