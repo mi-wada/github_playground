@@ -33,6 +33,7 @@ jobs:
             my name is mitsuaki!
             ok!
           "
+          echo $output
           echo 'name<<EOF' >> $GITHUB_OUTPUT
           echo $output >> $GITHUB_OUTPUT
           echo 'EOF' >> $GITHUB_OUTPUT
