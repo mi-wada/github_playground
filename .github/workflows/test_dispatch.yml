@@ -37,3 +37,4 @@ jobs:
         with:
           script: |
             console.log(context.repo.owner)
+            console.log(steps.say_hello.outputs.name)
