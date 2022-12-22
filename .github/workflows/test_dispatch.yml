@@ -26,7 +26,9 @@ jobs:
             my name is mitsuaki!
             ok!
           "
-          echo "::set-output name=name::${output}"
+          echo 'name<<EOF' >> $GITHUB_OUTPUT
+          echo $output >> $GITHUB_OUTPUT
+          echo 'EOF' >> $GITHUB_OUTPUT
       - id: hoge
         run: |
           echo ${{ steps.say_hello.outputs.name }}
