@@ -20,7 +20,13 @@ jobs:
         run: |
           echo "Hello ${{ github.event.inputs.name }}!"
           echo "- in ${{ github.event.inputs.home }}!"
-          echo "::set-output name=name::${{ github.event.inputs.name }}"
+
+          output="
+            hello!!
+            my name is mitsuaki!
+            ok!
+          "
+          echo "::set-output name=name::${output}"
       - id: hoge
         run: |
           echo ${{ steps.say_hello.outputs.name }}
