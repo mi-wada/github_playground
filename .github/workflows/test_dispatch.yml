@@ -23,6 +23,7 @@ jobs:
 
           output="
             hello!!
+            EOF
             my name is mitsuaki!
             ok!
           "
