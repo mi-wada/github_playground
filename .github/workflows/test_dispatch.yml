@@ -24,6 +24,12 @@ jobs:
           output="
             hello!!
             EOF
+
+
+
+
+
+
             my name is mitsuaki!
             ok!
           "
@@ -37,4 +43,3 @@ jobs:
         with:
           script: |
             console.log(context.repo.owner)
-            console.log(steps.say_hello.outputs.name)
