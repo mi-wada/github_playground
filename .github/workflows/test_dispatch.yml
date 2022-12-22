@@ -21,6 +21,9 @@ jobs:
           echo "Hello ${{ github.event.inputs.name }}!"
           echo "- in ${{ github.event.inputs.home }}!"
           echo "::set-output name=name::${{ github.event.inputs.name }}"
+      - id: hoge
+        run: |
+          echo ${{ steps.say_hello.outputs.name }}
       - uses: actions/github-script@v4
         with:
           script: |
