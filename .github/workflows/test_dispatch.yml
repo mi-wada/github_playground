@@ -20,6 +20,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        service: ['hoge']
         environment: ['prod', 'stg', 'dev']
     steps:
       - id: dump
