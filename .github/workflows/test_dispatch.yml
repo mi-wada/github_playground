@@ -17,6 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: say_hello
+        name: "$(pwd)hoge"
         run: |
           echo "HOME: ${HOME}"
           echo ~/
