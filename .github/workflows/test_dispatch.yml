@@ -11,7 +11,7 @@ on:
       home:
         description: 'location'
         required: false
-        default: "${{ github.workspace }}"
+        default: ${GITHUB_WORKSPACE}
 jobs:
   say_hello:
     runs-on: ubuntu-latest
@@ -21,7 +21,7 @@ jobs:
           echo "HOME: ${HOME}"
           echo ~/
           echo $(pwd)
-          echo "${{ github.workspace }}"
+          echo "${GITHUB_WORKSPACE} "
           echo "Hello ${{ github.event.inputs.name }}!"
           echo "- in ${{ github.event.inputs.home }}!"
 
