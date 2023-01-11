@@ -17,9 +17,14 @@ jobs:
     runs-on: ubuntu-latest
     env:
       KUSTOMIZE_VERSION: 4.2.0
+    strategy:
+      fail-fast: false
+      matrix:
+        environment: ['prod', 'stg']
     steps:
       - id: dump
         run: |
+          echo "${{ matrix.environment }}"
           echo "HOME: ${HOME}"
           echo ~/
           echo $(pwd)
