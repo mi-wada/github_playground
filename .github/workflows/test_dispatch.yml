@@ -47,7 +47,7 @@ jobs:
       - id: cache-kustomize
         uses: actions/cache@v3
         with:
-          path: "${{ github.workspace }}/kustomize"
+          path: ${{ github.workspace }}/kustomize
           key: kustomize-v1-${{ env.KUSTOMIZE_VERSION }}
       - name: install kustomize
         if: steps.cache-kustomize.outputs.cache-hit != 'true'
