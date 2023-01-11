@@ -15,6 +15,8 @@ on:
 jobs:
   say_hello:
     runs-on: ubuntu-latest
+    env:
+      KUSTOMIZE_VERSION: 4.2.0
     steps:
       - id: dump
         run: |
@@ -45,7 +47,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: "${GITHUB_WORKSPACE}/kustomize"
-          key: kustomize-v1
+          key: kustomize-v1-${{ env.KUSTOMIZE_VERSION }}
       - name: install kustomize
         if: steps.cache-kustomize.outputs.cache-hit != 'true'
         run:
