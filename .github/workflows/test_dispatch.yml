@@ -26,6 +26,7 @@ jobs:
           echo "${GITHUB_WORKSPACE} "
           echo "Hello ${{ github.event.inputs.name }}!"
           echo "- in ${{ github.event.inputs.home }}!"
+          echoo "${{ github.workspace }}"
 
           output="
             hello!!
