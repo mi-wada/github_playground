@@ -18,6 +18,9 @@ jobs:
     steps:
       - id: say_hello
         run: |
+          echo "HOME: ${HOME}"
+          echo ~/
+          echo $(pwd)
           echo "Hello ${{ github.event.inputs.name }}!"
           echo "- in ${{ github.event.inputs.home }}!"
 
