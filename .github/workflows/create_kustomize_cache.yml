@@ -10,7 +10,7 @@ jobs:
   create-cache-of-kustomize-binary:
     runs-on: ubuntu-latest
     env:
-      KUSTOMIZE_VERSION: ${{ github.event.inputs.name }}
+      KUSTOMIZE_VERSION: ${{ github.event.inputs.KUSTOMIZE_VERSION }}
     steps:
     - name: Cache kustomize
       id: cache-kustomize
