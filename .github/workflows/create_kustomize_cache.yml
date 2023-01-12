@@ -1,0 +1,25 @@
+name: Create cache of kustomize binary
+on:
+  workflow_dispatch:
+    inputs:
+      KUSTOMIZE_VERSION:
+        description: version of kustomize
+        required: true
+        default: 4.2.0
+jobs:
+  create-cache-of-kustomize-binary:
+    runs-on: ubuntu-latest
+    env:
+      KUSTOMIZE_VERSION: ${{ github.event.inputs.name }}
+    steps:
+    - name: Cache kustomize
+      id: cache-kustomize
+      uses: actions/cache@v3
+      with:
+        path: ${{ github.workspace }}/kustomize
+        key: kustomize-${{ env.KUSTOMIZE_VERSION }}
+    - name: install kustomize
+      if: steps.cache-kustomize.outputs.cache-hit != 'true'
+      run: |
+        # ref: https://kubectl.docs.kubernetes.io/installation/kustomize/binaries/
+        curl "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh" | bash -s -- ${KUSTOMIZE_VERSION}
