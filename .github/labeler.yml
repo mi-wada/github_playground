@@ -1,5 +1,0 @@
-prod:
-- src/prod/**/*
-
-stg:
-- src/stg/**/*

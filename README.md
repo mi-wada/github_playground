@@ -1,3 +1,1 @@
-# GITHUB PLAYGROUND
-hoge
-hoge
+# GitHub Playground
