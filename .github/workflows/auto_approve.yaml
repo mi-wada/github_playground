@@ -11,6 +11,13 @@ jobs:
   auto_approve:
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    if: >-
+      (github.event.pull_request.user.login == 'mi-wada')
+      && startsWith(github.event.pull_request.title, 'Hogehoge')
+      && (
+        contains(github.head_ref, 'hogehoge') ||
+        contains(github.head_ref, 'fugafuga')
+      )
     steps:
       - env:
           PR_URL: ${{github.event.pull_request.html_url}}
